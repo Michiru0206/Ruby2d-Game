@@ -63,10 +63,10 @@ class Star
     attr_reader :shape
     SIZE = 25
     def initialize
-        #@x = rand(25..615)
-        #@y = rand(0..200)
-        @x = rand(Window.width)
-        @y = rand(Window.height)
+        @x = rand(Int.new(25).to_int..Int.new(615).to_int)
+        @y = rand(Int.new(0).to_int..Int.new(200).to_int)
+        #@x = rand(Window.width)
+        #@y = rand(Window.height)
         @y_velocity = 3.5
         @x_velocity = -3.5
     end
@@ -125,10 +125,10 @@ class FakeStar
     SIZE = 25
 
     def initialize
-        #@x = rand(25..615)
-        #@y = rand(0..200)
-        @x = rand(Window.width)
-        @y = rand(Window.height)
+        @x = rand(Int.new(25).to_int..Int.new(615).to_int)
+        @y = rand(Int.new(0).to_int..Int.new(200).to_int)
+        #@x = rand(Window.width)
+        #@y = rand(Window.height)
         @y_velocity = 2.5
         @x_velocity = -2.5
     end
