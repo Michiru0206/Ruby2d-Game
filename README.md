@@ -8,9 +8,19 @@ Welcome to Shooting Star! Shooting Star is the game with one paddle, moving yell
 
 ### Prerequisite
 
+To play the game, please make sure that you have installed ruby2d.
 
+```bash
+gem install ruby 2d
+```
 
-## Description
+After you installed ruby2d, clone the source code to your local to begin the game!
+
+```bash
+git clone https://github.com/Michiru0206/Ruby2d-Game.git
+```
+
+### Description
 
 ## Author
 
