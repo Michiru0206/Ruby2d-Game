@@ -32,6 +32,8 @@ ruby game.rb
 
 * Player can always check the score. The score board is one the top left of the window. When the paddle touches a yellow star, score icreases by one, but the score could decrease if the paddle touches a green star. The time of touching green starts are shown as deduction on the score board. 
 
+* The starts only bounce when they hit right and left edges of the window. They popup again after the paddle touches them and their popup spots are completely random. 
+
 * The game is over when player miss any yellow star.  
 
 * To quit the game, please press 'q'. 
