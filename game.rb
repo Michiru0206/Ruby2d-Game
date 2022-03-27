@@ -182,7 +182,8 @@ num_deduct = 0
 update do
     clear
     
-    background = Image.new('night_sky.jpg', width: 640, height: 480)
+    set background: 'navy'
+    #background = Image.new('night_sky.jpg', width: 640, height: 480)
 
     # Add 1 point when paddle hits either star or star2 
     if player.hit_star?(star)
