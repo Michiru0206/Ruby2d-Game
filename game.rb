@@ -1,6 +1,6 @@
 require 'ruby2d'
 
-#set background: 'navy'
+set background: 'navy'
 set title: 'Get Yellow Star!'
 
 class Paddle
@@ -28,6 +28,7 @@ class Paddle
         end
     end
 
+    # check whether start hits the paddle
     def hit_star?(star)
         star.shape && [[star.shape.x1, star.shape.y1], [star.shape.x2, star.shape.y2], 
         [star.shape.x3, star.shape.y3], [star.shape.x4, star.shape.y4]].any? do |coordinates|
@@ -35,7 +36,7 @@ class Paddle
         end
     end
 
-    # check whether start 2 hit the paddle
+    # check whether start 2 hits the paddle
     def hit_star2?(star2)
         star2.shape && [[star2.shape.x1, star2.shape.y1], [star2.shape.x2, star2.shape.y2], 
         [star2.shape.x3, star2.shape.y3], [star2.shape.x4, star2.shape.y4]].any? do |coordinates|
@@ -43,6 +44,7 @@ class Paddle
         end
     end
 
+    # check whether fake star hits the paddle
     def hit_fake?(fake_star)
         fake_star.shape && [[fake_star.shape.x1, fake_star.shape.y1], [fake_star.shape.x2, fake_star.shape.y2], 
         [fake_star.shape.x3, fake_star.shape.y3], [fake_star.shape.x4, fake_star.shape.y4]].any? do |coordinates|
@@ -61,8 +63,10 @@ class Star
     attr_reader :shape
     SIZE = 25
     def initialize
-        @x = rand(25..615)
-        @y = rand(0..200)
+        #@x = rand(25..615)
+        #@y = rand(0..200)
+        @x = rand(Window.width)
+        @y = rand(Window.height)
         @y_velocity = 3.5
         @x_velocity = -3.5
     end
@@ -121,8 +125,10 @@ class FakeStar
     SIZE = 25
 
     def initialize
-        @x = rand(25..615)
-        @y = rand(0..200)
+        #@x = rand(25..615)
+        #@y = rand(0..200)
+        @x = rand(Window.width)
+        @y = rand(Window.height)
         @y_velocity = 2.5
         @x_velocity = -2.5
     end
@@ -182,7 +188,7 @@ num_deduct = 0
 update do
     clear
     
-    # QUESTION: the objects' speed get slow when I use an image for the background
+    # QUESTION: the objects' speeds get slow when I use an image for the background
     #set background: 'navy'
     background = Image.new('night_sky.jpg', width: 640, height: 480)
 
