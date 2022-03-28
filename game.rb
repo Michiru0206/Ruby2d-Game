@@ -1,6 +1,5 @@
 require 'ruby2d'
 
-set background: 'navy'
 set title: 'Get Yellow Star!'
 
 class Paddle
@@ -189,8 +188,8 @@ update do
     clear
     
     # QUESTION: the objects' speeds get slow when I use an image for the background
-    #set background: 'navy'
-    background = Image.new('night_sky.jpg', width: 640, height: 480)
+    set background: 'navy'
+    #background = Image.new('night_sky.jpg', width: 640, height: 480)
 
     # Add 1 point when paddle hits either star or star2 
     if player.hit_star?(star)
