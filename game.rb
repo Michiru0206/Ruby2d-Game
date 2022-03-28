@@ -182,7 +182,7 @@ star2 = Star.new
 fake_star = FakeStar.new
 num_point = 0
 num_deduct = 0
-background = Image.new('night_sky.jpg', width: 640, height: 480)
+#background = Image.new('night_sky.jpg', width: 640, height: 480)
 
 
 update do
@@ -190,7 +190,7 @@ update do
     
     # QUESTION: the objects' speeds get slow when I use an image for the background
 
-    set_background = background
+    background = Image.new('sky4.png', width: 640, height: 480)
 
     # Add 1 point when paddle hits either star or star2 
     if player.hit_star?(star)
