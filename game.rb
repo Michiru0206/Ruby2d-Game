@@ -21,9 +21,9 @@ class Paddle
 
     def move
         if @direction == :right
-            @x = [@x + 5, max_x].min
+            @x = [@x + 10, max_x].min
         elsif @direction == :left
-            @x = [@x - 5, 0].max
+            @x = [@x - 10, 0].max
         end
     end
 
@@ -64,10 +64,8 @@ class Star
     def initialize
         @x = rand(25..615)
         @y = rand(0..200)
-        #@x = rand(Window.width)
-        #@y = rand(Window.height)
-        @y_velocity = 4.5
-        @x_velocity = -4.5
+        @y_velocity = 8
+        @x_velocity = -8
     end
     
     def draw
@@ -126,10 +124,8 @@ class FakeStar
     def initialize
         @x = rand(25..615)
         @y = rand(0..200)
-        #@x = rand(Window.width)
-        #@y = rand(Window.height)
-        @y_velocity = 4.5
-        @x_velocity = -4.5
+        @y_velocity = 8
+        @x_velocity = -8
     end
     
     def draw
@@ -190,7 +186,7 @@ update do
     
     # QUESTION: the objects' speeds get slow when I use an image for the background
 
-    background = Image.new('night_sky-min', width: 640, height: 480)
+    background = Image.new('night_sky-min.jpg', width: 640, height: 480)
 
     # Add 1 point when paddle hits either star or star2 
     if player.hit_star?(star)
