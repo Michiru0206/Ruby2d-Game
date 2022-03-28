@@ -2,6 +2,50 @@ require 'ruby2d'
 
 set title: 'Get Yellow Star!'
 
+POPUPCOORDS = [
+    { x: 30, y: 10 },
+    { x: 50, y: 100 },
+    { x: 125, y: 70 },
+    { x: 150, y: 20 },
+    { x: 160, y: 120 },
+    { x: 180, y: 128 },
+    { x: 270, y: 29 },
+    { x: 332, y: 25 },
+    { x: 468, y: 120 },
+    { x: 150, y: 32 },
+    { x: 150, y: 108 },
+    { x: 350, y: 108 },
+    { x: 550, y: 108 },
+    { x: 150, y: 16 },
+    { x: 350, y: 16 },
+    { x: 550, y: 16 },
+    { x: 150, y: 48 },
+    { x: 350, y: 48 },
+    { x: 550, y: 48 },
+  ]
+
+POPUPCOORDS2 = [
+    { x: 35, y: 20 },
+    { x: 55, y: 110 },
+    { x: 130, y: 80 },
+    { x: 160, y: 30 },
+    { x: 170, y: 110 },
+    { x: 200, y: 118 },
+    { x: 265, y: 19 },
+    { x: 322, y: 25 },
+    { x: 458, y: 100 },
+    { x: 150, y: 12 },
+    { x: 150, y: 108 },
+    { x: 350, y: 108 },
+    { x: 550, y: 108 },
+    { x: 150, y: 26 },
+    { x: 350, y: 26 },
+    { x: 550, y: 26 },
+    { x: 150, y: 68 },
+    { x: 350, y: 68 },
+    { x: 550, y: 68 },
+]
+
 class Paddle
     attr_writer :direction
 
@@ -21,9 +65,9 @@ class Paddle
 
     def move
         if @direction == :right
-            @x = [@x + 10, max_x].min
+            @x = [@x + 4, max_x].min
         elsif @direction == :left
-            @x = [@x - 10, 0].max
+            @x = [@x - 4, 0].max
         end
     end
 
@@ -62,10 +106,13 @@ class Star
     attr_reader :shape
     SIZE = 25
     def initialize
-        @x = rand(25..615)
-        @y = rand(0..200)
-        @y_velocity = 8
-        @x_velocity = -8
+        spot = POPUPCOORDS.sample
+        @x = spot[:x]
+        @y = spot[:y]
+        #@x = rand(25..615)
+        #@y = rand(0..200)
+        @y_velocity = 3.5
+        @x_velocity = -3.5
     end
     
     def draw
@@ -122,10 +169,13 @@ class FakeStar
     SIZE = 25
 
     def initialize
-        @x = rand(25..615)
-        @y = rand(0..200)
-        @y_velocity = 8
-        @x_velocity = -8
+        spot = POPUPCOORDS2.sample
+        @x = spot[:x]
+        @y = spot[:y]
+        #@x = rand(25..615)
+        #@y = rand(0..200)
+        @y_velocity = 3.5
+        @x_velocity = -3.5
     end
     
     def draw
@@ -178,8 +228,6 @@ star2 = Star.new
 fake_star = FakeStar.new
 num_point = 0
 num_deduct = 0
-#background = Image.new('night_sky.jpg', width: 640, height: 480)
-
 
 update do
     clear
