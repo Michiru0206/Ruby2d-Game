@@ -22,9 +22,9 @@ class Paddle
 
     def move
         if @direction == :right
-            @x = [@x + 3.5, max_x].min
+            @x = [Int.new(@x + 3.5.to_int, Int.new(max_x).to_int].min
         elsif @direction == :left
-            @x = [@x - 3.5, 0].max
+            @x = [Int.new(@x - 3.5).to_int, Int.new(0).to_int].max
         end
     end
 
