@@ -35,9 +35,9 @@ POPUPCOORDS2 = [
     { x: 322, y: 25 },
     { x: 458, y: 100 },
     { x: 150, y: 12 },
-    { x: 150, y: 108 },
-    { x: 350, y: 108 },
-    { x: 550, y: 108 },
+    { x: 150, y: 120 },
+    { x: 350, y: 120 },
+    { x: 550, y: 120 },
     { x: 150, y: 26 },
     { x: 350, y: 26 },
     { x: 550, y: 26 },
@@ -49,18 +49,14 @@ POPUPCOORDS2 = [
 class Paddle
     attr_writer :direction
 
-    def initialize(side)
+    def initialize
         @direction = nil
         @x = 250
-        if side == :down
-            @y = 420
-        else 
-            @y = 40
-        end
+        @y = 420
     end
 
     def draw
-        @shape = Rectangle.new(x: @x, y: @y, width: 150, height: 25, color: 'white')
+        @shape = Rectangle.new(x: @x, y: @y, width: 130, height: 25, color: 'white')
     end
 
     def move
@@ -222,7 +218,7 @@ class FakeStar
 end
 
 
-player = Paddle.new(:down)
+player = Paddle.new
 star = Star.new
 star2 = Star.new
 fake_star = FakeStar.new
