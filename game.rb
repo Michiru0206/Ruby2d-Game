@@ -225,7 +225,7 @@ star2 = Star.new
 fake_star = FakeStar.new
 num_point = 0
 num_deduct = 0
-img = path
+
 update do
     clear
     
