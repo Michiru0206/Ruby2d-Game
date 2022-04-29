@@ -107,8 +107,8 @@ class Star
         @y = spot[:y]
         #@x = rand(25..615)
         #@y = rand(0..200)
-        @y_velocity = 3.5
-        @x_velocity = -3.5
+        @y_velocity = 1.5
+        @x_velocity = -1.5
     end
     
     def draw
@@ -170,8 +170,8 @@ class FakeStar
         @y = spot[:y]
         #@x = rand(25..615)
         #@y = rand(0..200)
-        @y_velocity = 3.5
-        @x_velocity = -3.5
+        @y_velocity = 1.5
+        @x_velocity = -1.5
     end
     
     def draw
