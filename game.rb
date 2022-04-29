@@ -1,6 +1,7 @@
 require 'ruby2d'
 
 set title: 'Get Yellow Star!'
+set background: 'navy'
 
 POPUPCOORDS = [
     { x: 30, y: 10 },
@@ -224,13 +225,13 @@ star2 = Star.new
 fake_star = FakeStar.new
 num_point = 0
 num_deduct = 0
-
+img = path
 update do
     clear
     
     # QUESTION: the objects' speeds get slow when I use an image for the background
 
-    background = Image.new('sky.jpg', width: 640, height: 480)
+    #background = Image.new('sky.jpg', width: 640, height: 480)
 
     # Add 1 point when paddle hits either star or star2 
     if player.hit_star?(star)
